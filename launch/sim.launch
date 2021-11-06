@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="sim" default="True"/>
+    <node   
+        if="$(arg sim)"
+        pkg="ullc_diff_drive" 
+        type="sim.py" 
+        name="sim" 
+        required="False" 
+        output="screen"
+        args=""
+    />
+    <node   
+        pkg="ullc_diff_drive" 
+        type="cli_control.py" 
+        name="cli_control" 
+        required="True" 
+        output="screen"
+        args=""
+    />
+    <node   
+        pkg="rqt_multiplot" 
+        type="rqt_multiplot" 
+        name="rqt_multiplot" 
+        required="False" 
+        args="--multiplot-config $(find ullc_diff_drive)/viz/sim.rqt_multiplot.xml"
+    />
+    <node   
+        pkg="rviz" 
+        type="rviz" 
+        name="rviz" 
+        required="False"
+        args="-d $(find ullc_diff_drive)/viz/rviz.rviz" 
+    />
+
+</launch>

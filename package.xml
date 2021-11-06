@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ullc_diff_drive</name>
+  <version>0.1.0</version>
+  <description>
+    Ultimate low-level control for a differential drive robot.
+  </description>
+  <maintainer email="not@my.address">Sebastian Nicolas Giles</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <depend>geometry_msgs</depend>
+
+</package>
